@@ -4,5 +4,11 @@
 
 # What We Need
 
- ☆ Enthusiast to make Sustainable Change and lead a new candle movement.
- ☆ Enjoys handicrafts not only physical ones, also 
+
+ ☆ Enthusiast about designing.
+ 
+ ☆ Experience or skilled at User Design Experience.
+
+ ☆ Commits to deadlines, promotes collaboration, mantains confidentiality. 
+ 
+ ☆ Above all, hardworking and passionate about personal projects.
