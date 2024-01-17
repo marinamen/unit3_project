@@ -7,7 +7,7 @@
 
  ☆ Enthusiast about designing.
  
- ☆ Experience or skilled at User Design Experience.
+ ☆ Experience, skilled or willing to learn User Design Experience.
 
  ☆ Commits to deadlines, promotes collaboration, mantains confidentiality. 
  
