@@ -3,5 +3,3 @@
 <img src="https://github.com/marinamen/unit3_project/blob/main/images/Screenshot_2024-01-16_at_23.54.36-removebg-preview.png" width=80% height=80%>
 <img src="https://github.com/marinamen/unit3_project/blob/main/images/Screenshot_2024-01-17_at_10.18.10-removebg-preview.png" width=80% height=80%>
 
-# Contact
-Talk to me
