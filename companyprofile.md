@@ -2,6 +2,8 @@
 ![](https://github.com/marinamen/unit3_project/blob/main/images/Screenshot%202024-01-15%20at%2008.01.25.png)
 *Fig 1.1*
 
+**Developer**
+Manaha Ueda
 # Who we are
 
 Candelique is at the forefront of innovation in the candle industry, blending sustainability with cutting-edge designs. Our commitment to eco-friendly practices is matched only by our dedication to creating unique, memorable candles that enhance any space.
