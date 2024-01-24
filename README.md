@@ -44,8 +44,6 @@ Small scale, artisanal production methods often have a lower carbon footprint co
 
 
  ☆ Enthusiast about designing.
- 
- ☆ Experience, skilled or willing to learn User Design Experience.
 
  ☆ Commits to deadlines, promotes collaboration, mantains confidentiality. 
  
