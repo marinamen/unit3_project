@@ -1,5 +1,5 @@
 
-<img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=50% height=50%>
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=70% height=70%>
 
 *Figure 1 (https://es.pixilart.com/photo/coffee-shop-66fda593be195cc)*
  
