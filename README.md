@@ -1,8 +1,4 @@
-# Project 3
-# May's Coffee Shop
 
-
-   
 <img src="https://github.com/marinamen/unit2_project/blob/main/images/funny-luxurious-paragliding-63q706iov1yzal2m.gif" width=100% height=100%>
 
 *Figure 1 (https://gifdb.com/paragliding)*
