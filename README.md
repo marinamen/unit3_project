@@ -1,5 +1,5 @@
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/funny-luxurious-paragliding-63q706iov1yzal2m.gif" width=100% height=100%>
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=50% height=50%>
 
 *Figure 1 (https://gifdb.com/paragliding)*
  
