@@ -32,7 +32,7 @@
 ## Proposed Solution
 
  
-I propose a Coffee Shop Management app to tackle my client's operational issues, featuring order tracking, inventory management, and secure employee logins. Developed using Pycharm, Python, and KivyMD for an intuitive interface, plus a SQL database for robust data handling, this solution aims to enhance efficiency, reduce errors, and secure transactions. Slated for a 6-week development period, the app will be assessed on its ability to streamline operations, ensuring a smoother customer experience and improved financial accuracy in the coffee shop.
+I propose a Coffee Shop Management app to tackle my client's operational issues, featuring order tracking, inventory management, and secure employee logins. Developed using Pycharm, Python, and KivyMD for an intuitive interface, plus a SQL database for robust data handling, this solution aims to enhance efficiency, reduce errors, and secure transactions. Designed within a 6-week development period, the app will be assessed on its ability to streamline operations, ensuring a smoother customer experience and improved financial accuracy in the coffee shop.
 
 
 
