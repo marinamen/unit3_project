@@ -1,5 +1,5 @@
 
-<img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=70% height=70%>
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=90% height=90%>
 
 *Figure 1 (https://es.pixilart.com/photo/coffee-shop-66fda593be195cc)*
  
@@ -11,9 +11,8 @@
 
 # Unit 3: An Application for May's Coffee Shop
 
-*Marina Mendieta*
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/download.png" width=10% height=10%>
+<img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/cofeegif3.gif" width=25% height=25%>
 
 *Figure 2*
 
@@ -25,7 +24,7 @@
 
 
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/download%20(1).png" width=10% height=10%>
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/download.png" width=20% height=20%>
 
 *Figure 3*
 
