@@ -21,7 +21,9 @@
 
 ## Problem definition
 
-*My client, a local Coffee Shop owner paraglider, seeks safe storage for their equipment, aware that diverse temperature and humidity levels impact storage safety. Employing an Arduino-powered DHT11 sensor, our mission is to precisely measure temperature and humidity. The aim is to advise the client on the suitability of their paragliding storage within the storage room of their Karuizawa house based on these measurements.*
+*My client, a local coffee shop owner, is facing operational challenges three months into her business. She lacks standardized systems for menus and costs, leading to inconsistent drink recipes and customer wait times. Pricing irregularities arise from fluctuating ingredient costs, and manual revenue counting exposes her to financial inaccuracies and potential employee fraud. She's in dire need of a management platform to streamline her operations and safeguard her business.*
+
+
 
 <img src="https://github.com/marinamen/unit2_project/blob/main/images/download%20(1).png" width=10% height=10%>
 
@@ -29,12 +31,38 @@
 
 
 ## Proposed Solution
-Considering the client requirements an adequate solution includes a low cost sensing device for humidity and temperature and a custom data script that process and anaysis the samples acquired. For a low cost sensing device an adequate alternative is the DHT11 sensor[^1] which is offered online for less than 5 USD and provides adequare precision and range for the client requirements (Temperature Range: 0°C to 50°C, Humidity Range: 20% to 90%). Similar devices such as the DHT22, AHT20 or the AM2301B [^2] have higher specifications, however the DHT11 uses a simple serial communication (SPI) rather than more eleborated protocols such as the I2C used by the alternatives. For the range, precision and accuracy required in this applicaiton the DHT11 provides the best compromise. Connecting the DHT11 sensor to a computer requires a device that provides a Serial Port communication. A cheap and often used alternative for prototyping is the Arduino UNO microcontroller [^3]. "Arduino is an open-source electronics platform based on easy-to-use hardware and software"[^4]. In additon to the low cost of the Arduino (< 6USD), this devide is programable and expandable[^1]. Other alternatives include diffeerent versions of the original Arduino but their size and price make them a less adequate solution.
 
-Considering the budgetary constrains of the client and the hardware requirements, the software tool that I proposed for this solution is Python. Python's open-source nature and platform independence contribute to the long-term viability of the system. The use of Python simplifies potential future enhancements or modifications, allowing for seamless scalability without the need for extensive redevelopment [^5][^6]. In comparison to the alternative C or C++, which share similar features, Python is a High level programming language (HLL) with high abstraction [^7]. For example, memory management is automatic in Python whereas it is responsability of the C/C++ developer to allocate and free up memory [^7], this could result in faster applications but also memory problems. In addition a HLL language will allow me and future developers extend the solution or solve issues proptly.  
+ 
+I propose a Coffee Shop Management app to tackle my client's operational issues, featuring order tracking, inventory management, and secure employee logins. Developed using Pycharm, Python, and KivyMD for an intuitive interface, plus a SQL database for robust data handling, this solution aims to enhance efficiency, reduce errors, and secure transactions. Slated for a 6-week development period, the app will be assessed on its ability to streamline operations, ensuring a smoother customer experience and improved financial accuracy in the coffee shop.
 
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/1200px-Arduino-uno-perspective-transparent.png" width=20% height=20%>
+
+## Rationale
+
+
+I propose developing a comprehensive Coffee Shop Management application utilizing Python, KivyMD, and SQLite, tailored to address the unique challenges faced by my client's coffee shop business. This desktop application will feature a secure login and signup system for employees, enhancing accountability and reducing the risk of internal fraud. An intuitive order page will be implemented to streamline the recording of customer orders, ensuring accuracy and efficiency in service delivery.
+
+Additionally, the application will include an inventory management module where ingredients can be meticulously tracked and purchased, addressing the issue of pricing irregularities due to fluctuating ingredient costs. This module will not only facilitate smoother operations but also contribute to more accurate financial management and cost control.
+
+Python was chosen for its versatility and wide adoption in the tech industry, making it accessible for future development and maintenance. Its rich library ecosystem allows for efficient application development. 
+
+<img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/Python-logo-notext.svg.png" width=10% height=10%>
+
+
+KivyMD, a user-friendly framework for creating responsive interfaces, will ensure the application is both visually appealing and functional, offering customizability and ease of use for the shop's staff.
+
+
+<img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/kivy%20logo.png" width=10% height=10%>
+
+SQLite will serve as the database management system, chosen for its simplicity, reliability, and the ability to handle large volumes of data without the need for a separate server process.
+
+<img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/SQLiteLogo.svg.png" width=20% height=20%>
+
+
+This solution is designed to revolutionize the management of my client's coffee shop, turning the current challenges into opportunities for growth and improved customer satisfaction. By integrating these technologies, the Coffee Shop Management application will provide a robust platform for order accuracy, inventory control, and financial transparency, setting the foundation for the business's future success.
+
+
+<img src="" width=20% height=20%>
 
 
 **Design statement**
@@ -544,3 +572,17 @@ def serverLogin(ip="192.168.6.153", user={"username": "keelarina", "password": "
 A 7 min video demonstrating the proposed solution with narration
 
 [click here](https://drive.google.com/drive/u/0/folders/1wc02hAbefVOhRh0PKFGidpggd4kH6zbF)
+
+
+
+<sub> 
+
+[^1]: SQL Lite (n.d).
+https://www.python.org/about/success/
+[^2]: Rose, J. (2020). Why Python is so popular with developers: 3 reasons the language has exploded. TechRepublic. https://www.techrepublic.com/article/why-python-is-so-popular-with-developers-3-reasons-the-language-has-exploded/
+[^3]: KivyMD. (n.d.). KivyMD: Introduction. https://kivymd.readthedocs.io/en/latest/introduction/
+[^4]: Kivy. (n.d.). User Interface - Widgets. https://kivy.org/doc/stable/gettingstarted/widgets.html
+[^5]: Smith, L. (2021). Flutter vs Kivy: Which One is Better for Cross-Platform App Development? Medium. https://levelup.gitconnected.com/flutter-vs-kivy-which-one-is-better-for-cross-platform-app-development-f38d73624e6b
+[^6]: SQLite. (n.d.). SQLite Features. https://www.sqlite.org/features.html
+[^7]: IBM. (2021). IBM Db2. https://www.ibm.com/products/db2-database
+[^8]: SQL Tutorial. (n.d.). What is SQLite? https://www.sqlitetutorial.net/what-is-sqlite/
