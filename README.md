@@ -70,30 +70,18 @@ This solution is designed to revolutionize the management of my client's coffee 
 
 ## Success Criteria
 
-[^1]: Industries, Adafruit. “DHT11 Basic Temperature-Humidity Sensor + Extras.” Adafruit Industries Blog RSS, https://www.adafruit.com/product/386. 
-[^2]: Nelson, Carter. “Modern Replacements for DHT11 and dht22 Sensors.” Adafruit Learning System, https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors/what-are-better-alternatives.   
-[^3]:“How to Connect dht11 Sensor with Arduino Uno.” Arduino Project Hub, https://create.arduino.cc/projecthub/pibots555/how-to-connect-dht11-sensor-with-arduino-uno-f4d239.  
-[^4]:Team, The Arduino. “What Is Arduino?: Arduino Documentation.” Arduino Documentation | Arduino Documentation, https://docs.arduino.cc/learn/starting-guide/whats-arduino.  
-[^5]:Tino. “Tino/PyFirmata: Python Interface for the Firmata (Http://Firmata.org/) Protocol. It Is Compliant with Firmata 2.1. Any Help with Updating to 2.2 Is Welcome. the Capability Query Is Implemented, but the Pin State Query Feature Not Yet.” GitHub, https://github.com/tino/pyFirmata. 
-[^6]:Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python/. 
-[^7]: Real Python. “Python vs C++: Selecting the Right Tool for the Job.” Real Python, Real Python, 19 June 2021, https://realpython.com/python-vs-cpp/#memory-management. 
-[^8]:Note.mk. (n.d.). Try, except, else, finally in Python (exception handling). Try, except, else, finally in Python (Exception handling). https://note.nkmk.me/en/python-try-except-else-finally/ 
-[^9]:Team, G. L. (2023, November 8). Python numpy tutorial - 2024. Great Learning Blog: Free Resources what Matters to shape your Career! https://www.mygreatlearning.com/blog/python-numpy-tutorial/#:~:text=NumPy%20in%20Python%20is%20a,that%20can%20be%20used%20freely. 
-[^10]:Team, G. L. (2023, November 8). Python numpy tutorial - 2024. Great Learning Blog: Free Resources what Matters to shape your Career! https://www.mygreatlearning.com/blog/python-numpy-tutorial/#:~:text=NumPy%20in%20Python%20is%20a,that%20can%20be%20used%20freely. 
-[^11]:
-1. The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours. 
-1. ```[HL]``` The local variables will be measure using a set of 3 sensors around the dormitory.
-2. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. ```(SL: linear model)```, ```(HL: non-lineal model)```
-3. The solution provides a comparative analysis for the Humidity and Temperature levels for each Local and Remote locations including mean, standad deviation, minimum, maximum, and median.
-4. ```(SL)```The Local samples are stored in a csv file and ```(HL)``` posted to the remote server as a backup.
-5. The solution provides a prediction for the subsequent 12 hours for both temperature and humidity.
-6. The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
+1. The application has a log-in system to distinguish users between an admin and an employer.
 
-_TOK Connection: To what extent does ```the use of data science``` in climate research influence our understanding of environmental issues, and what knowledge questions arise regarding the ```reliability, interpretation, and ethical implications``` of data-driven approaches in addressing climate change_
+2. The user can search and filter orders, such as by customer, materials, date.
 
-1. How does our use of technology shape our understanding of the environment
-2. What responsibilities do we have as technologists when it comes to handling personal data related to our living spaces?
-3. What cultural and contextual factors might impact our interpretation of the results, especially when comparing our local readings with those from the campus? 
+3. The application allows for the user to create and log orders given from customers, and update their shipping status.
+
+4. The application allows the user to view the store's finances, such as the money raised and spent.
+
+5. The application allows the user to track the store's inventory, such as viewing the amount left and buying more resources.
+
+6. The application displays a summary of the store's activities, including orders completed, revenue raised,
+
 
 # Criteria B: Design
 
