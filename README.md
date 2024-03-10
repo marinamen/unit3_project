@@ -87,7 +87,16 @@ This solution is designed to revolutionize the management of my client's coffee 
 
 <img src="https://github.com/marinamen/unit3_project/blob/main/images/Home.png" width=100% height=100%>
 
+## System Diagram 
+![](https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/SYSTEM%20DIAGRAM.png)
 
+## UML Diagram 
+
+![](https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(2).jpg)
+
+## ER Diagram 
+
+![](https://github.com/marinamen/unit3_project/blob/main/images/Screenshot%202024-03-11%20at%2003.34.51.png)
 
 ## Record of Tasks
 | Task No | Planned Action                                                | Planned Outcome                                                                                                                 | Design cycle | Time Estimate | Completion date | Criterion |
@@ -126,7 +135,7 @@ This solution is designed to revolutionize the management of my client's coffee 
 | 32      | Finish test plans                                             | contains the procedures for testing the application as well as the expected results of each test.                               | Planning     | 45min         | 10 March        | B         |
 | 33      | Screen Record App for Criteria D                              | Video demonstration of all success criterias operating and functioning within the built application                             | Evaluation   | 10min         | 10 March        | D         |                                                                                                                                                                                                                                                                                                                   
 
-## Flow Chart
+## Flow Diagrams
 *Simple*
 
 <img src="https://github.com/marinamen/unit2_project/blob/main/images/Comp-33.jpg" width=65% height=65%>
