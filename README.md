@@ -232,30 +232,112 @@ A library I created that contains Database worker class and several functions th
 
 my_lib.py file can be divided by 4 majors components:
 
-**DatabaaseWorker Class**
+**DatabaseWorker Class**
 frsddfcfc
 
+**Hashing Function**
 
-
-**Photographic Documentation:**
-
-To complement our setup, we've included three photographs below, each depicting the precise location of one of the sensors. These images provide a visual reference to the strategic placement of the sensors, illustrating our methodical approach to capturing a comprehensive and accurate representation of the room's environmental conditions.
-
-**Purpose and Benefits:**
-
-This multi-sensor approach enables a thorough analysis of the room's microclimate. By comparing data from different parts of the room, we can identify patterns, anomalies, or environmental gradients, leading to more informed decisions about climate control and room utilization.
-Through this setup, we not only cater to the client's specific requirements but also enhance the overall accuracy and reliability of our environmental monitoring within the room.
+**Popup Function**
 
 
 
+## 3.First Success Criteria, Login and Sign up system.
 
-## 2.Client Requested mathematical representations of the data collected, both the local and remote data collected.
+### Registering  
 
->Our team fulfilled this request for the following: comparison of the humidity and temperature levels inside and outside the student room, prediction of humidity level during the subsequent 12 hour period after the recordings took place.
+#### Try Tecnique
 
-We used the polynomial regression modelling in two different ways, 1st degree (linear) and 2nd degree (polynomial)
+```.py
+    def signup(self):
 
-Below, the code performs a curve fitting operation using a polynomial model of degree 2 (degree = 2). It estimates the best-fit parameters `popt` and their covariance matrix `pcov` for the data in `averageTI` with respect to the independent variable `time_in_hours`. It initializes the parameter values with ones and attempts to find the optimal parameters for the quadratic polynomial model.
+        timeN=time.asctime()
+        try:
+            email = self.ids.email.text
+            employee_no = self.ids.employee_no.text
+            fullname = self.ids.full_name.text
+            password = self.ids.password.text
+            timeIn=timeN
+```
+
+Using a try block in the signup  is beneficial because it allows for the safe execution of code that might raise exceptions, particularly when retrieving data from the ids attribute, which could potentially be missing or improperly formatted by the employees. If any of these attributes (email, employee_no, fullname, password) do not exist or an error occurs during their retrieval, the try block will catch the exception, preventing the entire application from crashing which saves alot of time and prevents minor erros.  This approach is a robust error handling method, allowing for handling of unexpected situations or invalid user input. The ids here just retrieves the text written in the Text Fiedl.
+
+#### Ensuring Correct Format
+
+```.py
+            if '@' not in email:
+                popupGo(self," Email must contain '@' ")
+                return
+
+            if len(password) <= 8:
+                popupGo(self," Password must be longer than 8 characters ")
+                return
+
+```
+With my popupGO function that I explained previously, I put in place some rules so that no frauds are able to get away without personal identification, and for passwords to be secure enough (even if they are stored in hash), an 8 word password can still be a potential risk but it is safer than a shorter one.
+
+
+#### Ensuring Correct Format
+
+```.py
+
+            cursor.execute("SELECT * FROM users WHERE employee_no = ? OR email = ?", (employee_no, email))
+            if cursor.fetchone():
+                popupGo(self," Error: Employee number or email already in use")
+                return
+```
+This first part uses my DatabaseWorker, and verifies whether this user has been registered before via a sqlite query, employee numbers can only be associated with one account in order to satisfy my Clients requirement to lessen potential threats.
+
+
+```.py
+
+            encryptedpass=encrypt(password)
+            run_query = "INSERT INTO users (email, employee_no, fullname, password,login_time) VALUES (?, ?, ?, ?,?)"
+            cursor.execute(run_query, (email, employee_no, fullname, encryptedpass,timeIn))
+            m.commit()
+            self.manager.current="HomeScreen"
+
+```
+ If all the criteria has been completed, my encrypt function will hash the password and run a sql query to insert all of the data collected into the users database, and then it will take you to the home screen.
+
+### Login
+
+```.py
+    def login(self):
+        employee_no = self.ids.employee_no.text
+        input_password = self.ids.inputpassword.text
+        try:
+            cursor.execute("SELECT password FROM users WHERE employee_no = ?", (employee_no,))
+            row = cursor.fetchone()
+```
+Again this retrieves the Employee No and Password from the Text Fields and
+            if row:
+                stored_password = row[0]
+                if checkHash(input_password, stored_password):
+                    print("Login successful!")
+                    m.commit()
+                    self.manager.current = "HomeScreen"
+                else:
+                    popupGo(self, "Error! Invalid password")
+
+            else:
+                print("Error: Employee number not found")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h respect to the independent variable `time_in_hours`. It initializes the parameter values with ones and attempts to find the optimal parameters for the quadratic polynomial model.
 
 ```.py
 degree = 2
