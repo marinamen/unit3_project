@@ -1,7 +1,7 @@
 
 <img src="https://github.com/marinamen/unit3_project/blob/main/images/66fda593be195cc.gif" width=90% height=90%>
 
-*Figure 1 (https://es.pixilart.com/photo/coffee-shop-66fda593be195cc)*
+*Fig.1 (https://es.pixilart.com/photo/coffee-shop-66fda593be195cc)*
  
    ༘⋆ ❅ ･:*:｡ ❆༄༄
    
@@ -14,7 +14,7 @@
 
 <img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/cofeegif3.gif" width=25% height=25%>
 
-*Figure 2*
+*Fig.2*
 
 ## Criteria A: Planning
 
@@ -26,7 +26,7 @@
 
 <img src="https://github.com/marinamen/unit3_project/blob/main/images/download.png" width=20% height=20%>
 
-*Figure 3*
+*Fig.3*
 
 
 ## Proposed Solution
@@ -53,32 +53,32 @@ KivyMD, a user-friendly framework for creating responsive interfaces, will ensur
 
 <img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/kivy%20logo.png" width=10% height=10%>
 
-SQLite will serve as the database management system, chosen for its simplicity, reliability, and the ability to handle large volumes of data without the need for a separate server process.
+SQLite will serve as the database management system, chosen for its simplicity, reliability, and the ability to handle large volumes of data without the need for a separate server process. It is very straightforward and is easy to filter, insert, remove...etc. Convinient for a begginer UX app for Client.
 
 <img src="https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/SQLiteLogo.svg.png" width=20% height=20%>
 
 
 This solution is designed to revolutionize the management of my client's coffee shop, turning the current challenges into opportunities for growth and improved customer satisfaction. By integrating these technologies, the Coffee Shop Management application will provide a robust platform for order accuracy, inventory control, and financial transparency, setting the foundation for the business's future success.
 
+## Approval from Client
 
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Screenshot%202024-03-11%20at%2004.05.08.png" width=90% height=90%>
+Fig.4
 
-**Design statement**
-
-*Our team is developing a program using Arduino and DHT_11 sensors to monitor room humidity and temperature, vital for a paragliding client's equipment storage. Data will be uploaded in real-time to a server for 48 hours and accessed through a secure login. This reliable, validated system aims to complete within four weeks, meeting our client's needs for optimal storage conditions. Using Pycharm.*
 
 ## Success Criteria
 
-1. The application has a log-in system to distinguish users between an admin and an employer.
+1. The application has a sign up and login system, which aditionally distinguises between admin & employer.
 
-2. The user can search and filter orders, such as by customer, materials, date.
+2. The user can create orders realtime, while also being able to look and filter through previous orders.
 
 3. The application allows for the user to create and log orders given from customers, and update their shipping status.
 
-4. The application allows the user to view the store's finances, such as the money raised and spent.
+4. The application allows the admin to view the revenue and finances.
 
 5. The application allows the user to track the store's inventory, such as viewing the amount left and buying more resources.
 
-6. The application displays a summary of the store's activities, including orders completed, revenue raised,
+6. The application displays a Menu with recipe's of each drink.
 
 
 # Criteria B: Design
@@ -90,13 +90,20 @@ This solution is designed to revolutionize the management of my client's coffee 
 ## System Diagram 
 ![](https://github.com/marinamen/CS2023/blob/main/unit%201/pictures/SYSTEM%20DIAGRAM.png)
 
+
+
 ## UML Diagram 
 
 ![](https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(2).jpg)
 
+The UML diagram for the object-oriented programming classes depicts the structure and interactions of the classes used in the application's development. It features two main superclass entities, MDApp and MDScreen, from which all other classes derive their methods and properties. This inheritance relationship is represented through the directional arrows on the diagram.
+
+
 ## ER Diagram 
 
 ![](https://github.com/marinamen/unit3_project/blob/main/images/Screenshot%202024-03-11%20at%2003.34.51.png)
+
+ An entity relationship (ER) diagram is a type of flowchart that illustrates how “entities,” such as people, objects, or concepts relate to each other within a system. In this case my two databases, each employee can have many orders assigned to them but an order can only have 1 ownner hence the 1:m.
 
 ## Record of Tasks
 | Task No | Planned Action                                                | Planned Outcome                                                                                                                 | Design cycle | Time Estimate | Completion date | Criterion |
