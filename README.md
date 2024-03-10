@@ -160,55 +160,78 @@ Figure 5: The flow diagram above illustrates the Python function that retrieves 
 
 # Criteria C: Development
 
-## List of techniques used
-1.Functions
+## Techniques used
+  
+1. KivyMD Library
+2. OOP pattern
+3. Relational databases
+4. SQLite, ORM
+5. Classes
+6. Functions
+7. If statements
+8. For loop
+9. 
 
-2.Dictionaries & Lists
+## Computational thinking
+  
+1. Decomposition
+2. Pattern Recognition
+3. Algorithm Thinking
+4. Abstraction 
+  
+## Python file: "mainfile.py"
+  
+  
+### 1.Setting up the file
+After I got approval from my client I inmediately started setting up the file, while not all of these were imported when I started, they were eventually added throughout the proccess when any additional features were added
+```.py
+import sqlite3
+```
+In order to store the data collected from the app, which ranges from orders database to users database, i needed a lightweight disk-based database that doesn't require a separate server process and additionally sqlite3 allows relational databases that are useful, for example to see which orders what employee did, so a 1 to many relationship.
 
-3.For loops
+```.py
+from kivy.lang import Builder
+from kivy.uix.widget import Widget
 
-4.While loops
+```
+Using KivyMD's Builder makes creating your app's look easier and faster. It lets you separate the design from the code, making changes and updates simpler. This approach is great for quickly trying out new ideas and keeping your project easy to understand and work on.
 
-5.Try and Accept Commands
+```.py
 
-6.File reading
+from kivy.uix.screenmanager import ScreenManager
+from kivymd.app import MDApp
+from kivy.core.window import Window
 
-7.Modifying CSV files
+```
+The essential components in order to run a multiscreen kivy app.
 
-8.Registering and Login into API
+```.py
+from kivymd.uix.datatables import MDDataTable
+from kivymd.uix.list import TwoLineRightIconListItem, TwoLineIconListItem, IconRightWidget, TwoLineListItem
+from kivymd.uix.navigationrail import MDNavigationRail
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.button import MDFlatButton, MDRectangleFlatIconButton, MDIconButton
+from kivymd.uix.dialog import MDDialog
+from kivymd.icon_definitions import md_icons
+from kivymd.uix.scrollview import MDScrollView
+from kivymd.uix.textfield import MDTextField
+import datetime
 
-9.Sending data to API servers
-
-10.Accessing API data and reading
-
-11.Use of Matplotlib Library and Modificiations
-
-12. Use of Requests Library
-
-## Development
-## 1.Client Requested use of 3 sensors placed in different locations within the chosen Room.
-
-In response to the client's request for comprehensive temperature and humidity monitoring within a designated room, we strategically deployed three DHT11 sensors at varied locations to ensure a broad and precise data collection. The DHT11 sensors, known for their reliability in measuring temperature and humidity, were placed in distinct parts of the room to capture environmental variations effectively.
-
-Sensor Placement and Rationale:
-
-*Sensor 1:* Located near the entrance of the room, this sensor is positioned to capture the temperature and humidity levels that might be influenced by external factors, such as air coming in from outside the room.
-
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Screenshot%202023-12-14%20at%2001.20.36.png" width=35% height=35%>
-Fig1.1
-
-
-*Sensor 2:* Placed in the central part of the room, this sensor is intended to measure the average room conditions, providing a balanced view of the environmental factors at play within the space.
-
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Screenshot%202023-12-14%20at%2001.20.30.png" width=35% height=35%>
-Fig.1.2
+```
+Additional feautures.
 
 
-*Sensor 3:* Situated near the window or another heat source, this sensor aims to detect any variations in temperature and humidity caused by sunlight or appliances, offering insights into how external elements can impact the room's climate.
+```.py
+from my_lib import DatabaseWorker, encrypt,checkHash , popupGo, adminYN
+```
+A library I created that contains Database worker class and several functions that enable me to call them instead of losing time and lines rewriting them, to facilitate the whole proccess.
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Screenshot%202023-12-14%20at%2001.20.26.png" width=35% height=35%>
-Fig.1.3
+```
 
+
+## 2.My_Lib features.
+
+my_lib.py file can be divided by 4 majors components:
 
 
 
