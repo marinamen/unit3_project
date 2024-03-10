@@ -211,12 +211,13 @@ from my_lib import DatabaseWorker, encrypt,checkHash , popupGo, adminYN
 ```
 A library I created that contains Database worker class and several functions that enable me to call them instead of losing time and lines rewriting them, to facilitate the whole proccess.
 
-```
-
 
 ## 2.My_Lib features.
 
 my_lib.py file can be divided by 4 majors components:
+
+**DatabaaseWorker Class**
+frsddfcfc
 
 
 
