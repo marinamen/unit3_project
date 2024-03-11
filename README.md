@@ -140,21 +140,58 @@ The UML diagram for the object-oriented programming classes depicts the structur
 | 30      | Finalise program                                              | Test all the functions and beautify to present to the client                                                                    | Development  | 30min         | 9 March         | C         |
 | 31      | Write Criteria C                                              | Write all of the app development, code description and details of tecniques implemented                                         | Evaluation   | 2h            | 9 March         | A         |
 | 32      | Finish test plans                                             | contains the procedures for testing the application as well as the expected results of each test.                               | Planning     | 45min         | 10 March        | B         |
-| 33      | Screen Record App for Criteria D                              | Video demonstration of all success criterias operating and functioning within the built application                             | Evaluation   | 10min         | 10 March        | D         |                                                                                                                                                                                                                                                                                                                   
+| 33      | Screen Record App for Criteria D                              | Video demonstration of all success criterias operating and functioning within the built application                             | Evaluation   | 10min         | 10 March        | D         |                                                                                                              
+
+## Task Record
+
+| Description               | Test Type                    | Input                                                                                                                                                                           | Expected output                                                                                                                                                                                                                                                                                                                                                                                                        |
+|---------------------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SignUp System             | Functional: Unit test        | 1. Run the program 2. Click the "Register" button 3.Input username 4. Input password 5. Confirm password 6. Click register                                                      | After entering all of the relevant data in each textfields and clicking the register button, the user information should be stored into the database, and stored in the 'users' table. The user will then be directed to the login  screen along with a pop-up message indicating that the user is registered. If the user already exists, a pop-up  will show informing the user that the username is already in use. |
+| Login System              | Functional: Unit test        | 1. Run the program 2. Click the "Login" button 3.Input username 4. Input password 6. Click login                                                                                | If the username and password input is correct, the user will be directed to the Home screen, if not, the helper text for both the username and password will show up telling the user to re-check their input again.                                                                                                                                                                                                   |
+| Order System              | Functional: Unit test        | 1. Run the program 2. Click the New Order Button 3. Fill up Client ID 4.Click Drinks ordered 5.Checkout                                                                         | After this, the transaction should be saved into the ledger, and a new order should be added there,, additionally  the price label should be reset.                                                                                                                                                                                                                                                                    |
+| Log out System            | Functional: Unit test        | 1. Run the program 2. Login 3. Logout                                                                                                                                           | After clicking the "Log out", the user will be directed to the Welcome screenq                                                                                                                                                                                                                                                                                                                                         |
+| app_project3 database     | Functional: Integration test | 1. Run the program 2. Login 3. Click "Add item" button 4. Input owner, title 5. Select Drink 6. Input Client Id  8. Click add item 9. Check 'items' table in app_project3.db.db | All relevant data regarding the food information should be stored in the database, and stored in the 'items' table.  The table in the database should be updated whenever a new item is added or removed.                                                                                                                                                                                                              |
+| Inventory System & Screen | Functional: Unit test        | 1. Run the program 2. Login 3. Click Inventory  4.Click Plus                                                                                                                    | From clicking the buttons I will be able to see if the added product was d                                                                                                                                                                                                                                                                                                                                             |
+| MDTable System            | Functional: Unit test        | 1. Run the program 2. Login 3. Click "view list" button 4. Click on checkboxes  of the item(s) that the user wants to delete 5. Click "delete item" button                      | A checkmark will show up inside the box when the user selects the checkbox next to the item. The selected item(s)  should then be deleted from the table when they click the delete item button.                                                                                                                                                                                                                       |
+| Navigation                | Functional: Integration test | 1. Run the program 2. Login 3. Click on Menu 4.Click on the Navigation Bar 5. Click on any of the icons                                                                         | When clicking on the navigation bar icons, it should take you to the selected screen.                                                                                                                                                                                                                                                                                                                                  |
+| Menu                      | Functional: Unit test        | 1. Run the program 2. Login 3. Click the Menu 4. Click on drink 5.Click on recipe                                                                                               | When the menu appears, there should be a functionality where you click MDDIALog should appear with the recipe to the drink clicked.                                                                                                                                                                                                                                                                                    |
+| Code review               | Non-functional: code review  | assessing the code in project3.py to see whether the variable names, function names,  and comments are suitable                                                                 | The user can better grasp how the code works according to the variable names and comment. The code should be simple to understand and easy to follow.                                                                                                                                                                                                                                                                  |
+
 
 ## Flow Diagrams
-*Simple*
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Comp-33.jpg" width=65% height=65%>
-Fig.3: The flowchart describes an authentication process using the 'requests' library. It starts with server login using user credentials, then posts to an API '/login' endpoint. The response is saved, and an access token from this is stored in a cookie, which is then displayed before the process ends.
+### Sign Up 
+
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(3).jpg" width=90% height=90%>
+
+Fig.14: The flow diagram abovs illustrates the SignUp proccess for the user, as shown above there is alot of requirements for a successful sign up.
 
 
-*Medium*
+### Log in
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Screenshot%202023-12-13%20at%2011.50.20.png" width=75% height=75%>
-Figure 4: The flow diagram above illustrates the program that is downloaded to the Arduino in C++ code. The program defines the three DHT11 sensors as output devices. Since there aren’t three five-volt outputs pin 12 is set to high to keep sensor 1 powered. It then registers each sensor to allocated ports (4, 7, and 13). The data from the sensors is then collected every five minutes and is displayed in the serial monitor before repeating. 
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(7).jpg" width=90% height=90%>
 
-<img src="https://github.com/marinamen/unit2_project/blob/main/images/Screenshot%202023-12-13%20at%206.05.40%20PM.png" width=75% height=75%>
+Fig.15: The flow diagram abovs illustrates the Login proccess for the employee, as shown above there is one main operation which is checking that the password corresponds the employee_no and the inputted password matches with the stored password. It's checked through my CheckHash Function.
+
+
+### Buy Material
+
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(4).jpg" width=90% height=90%>
+
+Fig.16: When a new itemis bought such a milk, the inventory is updated through the proccess above, aditionally the transaction is saved in the ledger table in order to ensure financial transparency to my Client.
+
+### Checkout
+
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(5).jpg" width=90% height=90%>
+
+Fig.17: Checkout is a function that takes place in the OrderScreen after the employee has taken the order of a client, it adds the transaction to the ledger and classifies it as profit.
+
+### Pre Enter (Table)
+
+<img src="https://github.com/marinamen/unit3_project/blob/main/images/Untitled%20(6).jpg" width=90% height=90%>
+
+Fig.18: On_pre_enter method is used in KivyMD to specify the actions to be taken before a screen is shown. In this case, the method creates a MDDataTable object. When the Data is collected a few things need to be taken in mind in order to mantain the FInancial Screen functional.
+
 
 
 Figure 5: The flow diagram above illustrates the Python function that retrieves sensor data from the local server. The function uses a known sensor ID value to take that sensor's specific values. It requests the sensor readings from the API using the IP and HTTP get from the server. It creates a dictionary with the readings as the key and an empty list. Then for every value in the sensor readings, it appends the data ti the corresponding list in the dictionary. Finally, if there are no values left it returns the list.
