@@ -171,7 +171,7 @@ Figure 5: The flow diagram above illustrates the Python function that retrieves 
 6. Functions
 7. If statements
 8. For loop
-9. 
+   
 
 ## Computational thinking
   
@@ -287,7 +287,7 @@ With my popupGO function that I explained previously, I put in place some rules 
 ```
 This first part uses my DatabaseWorker, and verifies whether this user has been registered before via a sqlite query, employee numbers can only be associated with one account in order to satisfy my Clients requirement to lessen potential threats.
 
-
+#### Continuing the Proccess
 ```.py
 
             encryptedpass=encrypt(password)
@@ -301,15 +301,9 @@ This first part uses my DatabaseWorker, and verifies whether this user has been 
 
 ### Login
 
+#### Verifying Employee User
+
 ```.py
-    def login(self):
-        employee_no = self.ids.employee_no.text
-        input_password = self.ids.inputpassword.text
-        try:
-            cursor.execute("SELECT password FROM users WHERE employee_no = ?", (employee_no,))
-            row = cursor.fetchone()
-```
-Again this retrieves the Employee No and Password from the Text Fields and
             if row:
                 stored_password = row[0]
                 if checkHash(input_password, stored_password):
@@ -322,12 +316,25 @@ Again this retrieves the Employee No and Password from the Text Fields and
             else:
                 print("Error: Employee number not found")
 ```
+Login is slightly different to the sign up for the key reason that the password has to be checked and compared with the hash, though my check_hash function. What this does is essentially de-encrypts the database retrieved hash and compares it to the password inputted. Since realistically two hashes cannot be the same even if they actually are the same word, due to the nature of the sha.256 algorithm
 
 
+### Additional Feauture
 
+In order to make it as close as possible to a downloadable app, I made the password be hidden when written by simply using the kivy command password, however I also added a Show Password function in order to maximise the UX.
 
+```.py
+    def show_password(self,checkbox,value):
+        if value:
+            self.ids.inputpassword.password=False
+            self.ids.pass_text.text="Hide Password"
+        else:
+            self.ids.inputpassword.password=True
+            self.ids.pass_text.text="Show Password"
 
+```
 
+As shown above when the checkbox was pressed```.py        on_active:root.show_password(*args )``` , the show_password function would start, and what this would do is it would check whether if Kivy detects the Password Text Field as a Password, if it does then that means it is not Visible so the label will be Show Password, however if the 
 
 
 
