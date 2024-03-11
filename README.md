@@ -72,9 +72,9 @@ Fig.4
 
 2. The user can create orders realtime, while also being able to look and filter through previous orders.
 
-3. The application allows for the user to create and log orders given from customers, and update their shipping status.
+3. Admin is able to see Employees Purchases and Orders and Log in times.
 
-4. The application allows the admin to view the revenue and finances.
+4. The application allows the admin to view the revenue and and an admin specific screen.
 
 5. The application allows the user to track the store's inventory, such as viewing the amount left and buying more resources.
 
@@ -270,7 +270,31 @@ A library I created that contains Database worker class and several functions th
 my_lib.py file can be divided by 4 majors components:
 
 **DatabaseWorker Class**
-frsddfcfc
+```.py
+import sqlite3
+
+class DatabaseWorker:
+    def __init__(self, name: str):
+        self.name_db = name
+        self.connection = sqlite3.connect(self.name_db)
+        self.cursor = self.connection.cursor()
+
+
+    def run_query(self, query: str):
+        self.cursor.execute(query)  
+        self.connection.commit() 
+
+    def search(self, query: str, multiple: bool = False):
+        results = self.cursor.execute(query)
+        self.run_query(query)
+        if multiple:
+            return results.fetchall()  
+        else:
+            return results.fetchone()  
+
+    def close(self):
+        self.connection.close()
+```
 
 **Hashing Function**
 
@@ -371,10 +395,164 @@ In order to make it as close as possible to a downloadable app, I made the passw
 
 ```
 
-As shown above when the checkbox was pressed```.py        on_active:root.show_password(*args )``` , the show_password function would start, and what this would do is it would check whether if Kivy detects the Password Text Field as a Password, if it does then that means it is not Visible so the label will be Show Password, however if the 
+As shown above when the checkbox was pressed```.py        on_active:root.show_password(*args )``` , the show_password function would start, and what this would do is it would check whether if Kivy detects the Password Text Field as a Password, if it does then that means it is not Visible so the label will be Show Password, however if the Password is visible the label will change to Hide Password.  Very useful function since often we input incorrect passwords by mistakes because we cannot see what we are typing. Enhances UX experience.
 
 
 
+## 4.Second Success Criteria, Orders and Orders Table.
+
+### Displays the table on the screen
+
+```.py
+def on_pre_enter(self, *args):
+    self.data_table = MDDataTable(
+        size_hint = (.9, .8),
+        pos_hint = {"center_x":.5, "center_y":.5},
+        use_pagination = True,
+        check = True,
+        column_data = [("Client_Id", 40), ("Ordered_item", 50), ("Amount", 40),
+                       ("aid", 45),
+    )
+    self.add_widget(self.data_table)
+    self.update()
+```
+Above is shown how I am able to display a table with data onto the screen, I use a select query previous to this in order to retrieve all of the necessary data and then display it onto the table using the program above. 
+I applied this strategy in different sections of the application, such as the order search system. However, when it came to integrating a table for data presentation, I encountered a hurdle with closing the table. Initially, I experimented with a pop-up window, but ultimately, I opted for a more user-friendly and aesthetically pleasing solution by incorporating a button to close the table view.
+
+### Checkout User orders
+```.py
+
+    def checkout(self):
+        client_id = self.ids.client.text
+        total_price = self.total
+
+        cursor.execute("INSERT into orders (client_id, paid, date) VALUES (?, ?, CURRENT_TIMESTAMP);", (client_id, total_price))
+        m.commit()  
+
+        for item_name, item_price in self.ordered:
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            cursor.execute("INSERT INTO ledger (item, cost, amount, date) VALUES (?, ?, ?, ?)", (item_name, item_price, 1, current_time))
+        m.commit()
+
+        self.total = 0
+        self.ordered = []
+        self.ids.price.text = "0¥"
+        popupGo(self, "Checkout complete. Thank you for your order!")
+
+```
+
+I implemented a checkout function to process orders efficiently. Upon invoking this function, I capture the client's ID and the total price from the UI and insert these details into an 'orders' database table, timestamping each order to mark its completion. To handle the breakdown of each order into individual items, I employed Decomposition by iterating over self.ordered, which contains the items. For each item, I record its name, cost, and a quantity of 1 in the 'ledger' table, tagging each entry with the current time. This approach is a clear demonstration of Algorithmic Thinking, allowing me to systematically process and log each item. After processing an order, I reset self.total and self.ordered to their initial states and update the UI to show a zero price, ensuring the system is ready for the next customer. I also implemented a popup message to confirm the successful checkout, enhancing the user experience. This comprehensive approach not only makes the checkout process seamless but also ensures accurate record-keeping for each transaction. This was especially useful since users tend to order more than one product.
+
+
+## 5.Third Success Criteria Employee Info.
+
+The admin is essentially employer with employee_no = 111, the reason why I chose this is to keep the Employees history tied with their Work ID instead of their usual one. This also allows for less tresspassers to sign in since essentially they need to have an employee NO to sign up, which has to fall under the below requirements.
+
+```.py
+
+        if not employee_no.isdigit() or not 100 <= int(employee_no) <= 999:
+            popupGo(self, "Employee number must be a number between 100 and 999")
+            return
+```
+
+
+Additionally I added a system that keeps track of the Login Times of each employee just in case if an issue occurs during shift the admin will be able to know who it was
+
+```.py
+
+update_query = "UPDATE users SET login_time = ? WHERE employee_no = ?"
+cursor.execute(update_query, (current_time, employee_no))
+m.commit()  #
+```
+
+## 6.Fourth Success Criteria Admin Privileges.
+
+In order for the admin to be recognised as I mentioned before, I define it as the employee_no = 101.
+
+The Revenue Screen diplays two graphs plotted using matplotlib and kivy garden to incorporate it into the application. The additonal Screen is only called when the a user presses into the Safebox in the revenue screen and:
+
+```.py
+        try:
+            if userNow == 101:  # Check if the employee_no indicates admin rights
+                self.manager.current = "AdminScreen"  # Navigate to AdminScreen if user is admin
+            else:
+                popupGo(self, "Access Denied: You are not an admin")
+```
+
+This ensures the access is limited to the Admin by checking the employee_no
+
+The additional Screen displays, revenue, balance and no_coffees sold per day, simply performed by sqllie comands such as sum.
+
+## 6.Fifth Success Criteria Track Inventory.
+
+#### Buy Item in Inventory
+
+```.py
+cursor.execute("UPDATE inventory SET amount = amount + 1 WHERE item = 'item_name'"):
+m.commit()
+```
+ In this line, I'm updating the inventory in my database. Specifically, I'm increasing the amount of 'item_name' by 1 in the inventory table. This is executed when an item is purchased or restocked.
+
+```.py
+cursor.execute("SELECT cost_per_unit_euro, distributor FROM inventory WHERE item = 'item_name'")
+```
+With this line, I'm retrieving the cost per unit and the distributor's name for 'item_name' from the inventory table. This information is essential for logging the transaction in the ledger.
+
+```.py
+cost, distributor = cursor.fetchone()
+```
+This line assigns the fetched cost per unit and distributor's name to the variables cost and distributor, respectively. The fetchone() function returns the next row of the query result, which in this case, contains the cost and distributor of 'cow milk'.
+
+```.py
+current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+```
+
+ Here, I'm getting the current time and formatting it as a string in the format "YYYY-MM-DD HH:MM:SS". This timestamp is used to record when the transaction occurred.
+
+```.py
+cursor.execute("INSERT INTO ledger (item, cost, amount, date) VALUES (?, ?, ?, ?)", ('cow milk', cost, 1, current_time))
+m.commit()
+```
+In this line, I'm inserting a new record into the ledger table. This record logs the purchase of 'item_name', including the item name, cost, quantity purchased (which is 1 in this case), and the timestamp of the transaction.
+
+```.py
+cursor.execute("SELECT amount FROM inventory WHERE item = 'item_name'")
+l=cursor.fetchone()
+new_amount=l[0]
+```
+ This line fetches the updated amount of 'item_name from the inventory after the purchase/restock.
+
+```.py
+self.ids.itemT.text=f"{new_amount}":
+```
+ Finally, I'm updating the text of the Label  to display the new amount of item in the inventory. This ensures that the UI reflects the most current inventory level after the transaction.
+
+#### Display of Inventory Screen Kivy
+
+Below is a short segment of my kivy code, this falls under the <InventoryScreen> and it is the display of a label that contains the amount of the item and the plus button to purchase more of it. I will run down a bit of kivymd language in order to show profound depth of knowledge.
+```.py
+    MDLabel:
+        id:chocsyrupT
+        text:root.new_amount
+        size_hint:.3,.3
+        pos_hint:{'center_x':0.49,'center_y':0.66}
+
+    MDIconButton:
+        id:chocsyrup
+        icon:"plus"
+        md_bg_color:"#fbebf3"
+        size:0.2,0.2
+        pos_hint:{'center_x':0.43, 'center_y':0.65}
+        on_release:root.buy_item()
+
+```
+The MDLabel displays a text with no functionality, but it can be changed using the code i previously mentioned, using the ID to identify it and replacing the no root.new_amount, which automatically takes the amount of the item in the inventory database and puts it into the label.
+
+The MDIconButton is a button that in this case I have displayed a plus that triggers the buy_item().
+
+## 7.Last Success Criteria Menu Inventory.
+
+#### Buy Item in Inventory
 
 
 
