@@ -550,17 +550,32 @@ The MDLabel displays a text with no functionality, but it can be changed using t
 
 The MDIconButton is a button that in this case I have displayed a plus that triggers the buy_item().
 
-## 7.Last Success Criteria Menu Inventory.
+## 7. Computational thinking
+  
+### 1. Decomposition
 
-#### Buy Item in Inventory
+In this app, I've broken down the complex task of managing a coffee shop into smaller, more manageable pieces by creating different classes for each part of the app, like SignUpScreen, HomeScreen, and OrderScreen. Each class deals with a specific piece of the app's functionality. For instance, the OrderScreen class focuses only on handling orders. This approach makes the code easier to understand and work with because I can focus on one small part at a time, making the whole system more organized.
+
+### 2. Pattern Recognition
+
+For pattern recognition in my coffee shop app, I noticed that certain elements, like background images and color themes, were reused across different screens. Additionally, the functionality to navigate back to the home screen was common throughout the app. To make my code more efficient and avoid repetition,I took advantage and added a Navigation Widget that allowed me to only insert the name and size and it facilitated the whole proccess.
+
+### 3. Algorithm Thinking
+
+I used algorithmic thinking  in the buy_item methods within the InventoryScreen class, where a systematic process is followed to update inventory levels, record transactions in the ledger, and reflect changes in the UI. This method involves a sequence of steps: updating the inventory database, fetching updated cost and distributor information, inserting a new record into the ledger, and finally updating the UI to show the new inventory level. This methodical approach ensures that all aspects of the inventory update process are addressed in a logical order, minimizing errors and ensuring data integrity.
+
+### 4. Abstraction 
+
+I demostrated Abstracion through the use of high-level KivyMD widgets (MDLabel, MDIconButton, etc.....) and custom methods (buy_choco, signup, etc....) that hide the complexity of underlying operations. For instance, MDIconButton abstracts away the details of rendering a button and detecting touch events, allowing me to focus on specifying button properties and behavior (like on_release) relevant to the application's context. Similarly, the signup method in the SignUpScreen class abstracts the process of registering a new user, encapsulating database interactions, input validation, and UI updates. This abstraction enables me to manage complexity by concentrating on higher level functionality rather than low level details.
+
 
 
 
 # Criteria D: Functionality
 
-A 7 min video demonstrating the proposed solution with narration
+A 3 min video w the proposed solution
 
-[click here](https://drive.google.com/drive/u/0/folders/1wc02hAbefVOhRh0PKFGidpggd4kH6zbF)
+[click here](https://drive.google.com/drive/u/0/folders/1qj2vpnNSFAbFG0RT5rMpL5yer8p_rzJo)
 
 
 
